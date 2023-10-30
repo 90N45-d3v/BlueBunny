@@ -12,7 +12,7 @@
 
 ## Table of contents
 - [Overview](https://github.com/90N45-d3v/BlueBunny#overview)
-- [Installation & Start](https://github.com/90N45-d3v/BlueBunny#installation-&-start)
+- [Installation & Start](https://github.com/90N45-d3v/BlueBunny#installation--start)
 - [Manual communication with the Bash Bunny through Python](https://github.com/90N45-d3v/BlueBunny#manual-communication-with-the-bash-bunny-through-python)
 - [Troubleshooting](https://github.com/90N45-d3v/BlueBunny#troubleshooting)
 - [Working on...](https://github.com/90N45-d3v/BlueBunny#working-on)
@@ -63,8 +63,21 @@ BunnyLE.send(bb, data, d_type)
 ````
 
 ## Troubleshooting
-
+#### Connecting your Bash Bunny doesn't work? Try the following instructions:
+- Try connecting a few more times
+- Check if your bluetooth adapter is available
+- Restart the system your C2 server is running on
+- Check if your Bash Bunny is running the BlueBunny payload properly
+- How far away from your Bash Bunny are you? Is the environment (distance, interferences etc.) still sustainable for typical BLE connections?
+#### Bugs within BlueZ
+The Bluetooth stack used is well known, but also very buggy. If starting the connection with your Bash Bunny does not work, it is probably a temporary problem due to BlueZ. Here are some kind of errors that can be caused by temporary bugs. These usually disappear at the latest after rebooting the C2's operating system, so don't be surprised and calm down if they show up.
+- Timeout after 5.0 seconds
+- Unknown error while scanning for BLE devices
 
 ## Working on...
+- Remote shell access
+- BLE exfiltration channel
+- Improved connecting process
 
 ## Additional information
+As I said, BlueZ, the base for the bluetooth part used in BlueBunny, is somewhat bug prone. If you encounter any non-temporary bugs when connecting to Bash Bunny as well as any other bugs/difficulties in the whole BlueBunny project, you are always welcome to contact me. Be it a problem, an idea/solution or just a nice feedback.
