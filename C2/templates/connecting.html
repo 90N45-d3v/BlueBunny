@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="SHORTCUT ICON" type="image/x-icon" href="static/icon.png"/>
-	<link rel="icon" type="image/x-icon" href="static/icon.png" />
+	<link rel="SHORTCUT ICON" type="image/x-icon" href="static/bb_icon.png"/>
+	<link rel="icon" type="image/x-icon" href="static/bb_icon.png" />
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>BlueBunny</title>
@@ -16,12 +16,17 @@
 			--bs-btn-hover-bg: #1a62ec !important;
 			--bs-btn-hover-color: #ffffff !important;
 		}
+
+		@keyframes spinner {
+			0% {transform: rotate( 0deg ) scale( 1 );}
+			100% {transform: rotate( 360deg ) scale( 1 );}
+		};
 	</style>
 	<script type="text/javascript">
 		let fail_counter = 0
 
 		function tryAgain() {
-			document.getElementById("action").innerHTML = '<h3 class="text-center" style="color: #ced4da; margin-bottom: 10px;">Connecting your Bash Bunny...</h3><div class="text-center" style="margin-top: 100px;"><a class="btn btn-imp" title="Connect" href="/connect" id="connectBtn">Too many fails occured... Try again</a><br><br><p class="fw-bold">OR</p></div><ul style="margin-bottom: 100px;"><li>Make sure your bluetooth adapter is running properly</li><li>Restart your Bash Bunny via unplugging and plugging it back in</li><li>Restart the BlueBunny C2 server</li></ul><p>Please be patient - Making BLE connections can be buggy. It\'s likely a temporary problem that will be gone in a minute.</p>'
+			document.getElementById("action").innerHTML = '<h3 class="text-center" style="color: #ced4da; margin-bottom: 10px;">Connecting your Bash Bunny...</h3><div class="text-center" style="margin-top: 100px;"><a class="btn btn-imp" title="Connect" href="/connect" id="connectBtn">Too many fails occured... Try again</a><br><br><p class="fw-bold">OR</p></div><ul style="margin-bottom: 100px;"><li>Make sure your bluetooth adapter is running properly</li><li>Restart your Bash Bunny via unplugging and plugging it back in</li><li>Restart the BlueBunny C2 server\'s operating system</li></ul><p>Please be patient - Making BLE connections can be buggy. It\'s likely a temporary problem that will be gone in a minute.</p>'
 		}
 
 		function connectionCheck() {
@@ -54,6 +59,9 @@
 					<li class="nav-item">
 						<button class="btn" title="Connect" disabled>Connect to Bash Bunny</button>
 					</li>
+					<li class="nav-item" style="margin: auto; margin-right: 15px; margin-left: 20px;">
+						<a>©</a>
+					</li>
 					</ul>
 				</div>
 			</div>
@@ -70,6 +78,9 @@
 					<ul class="nav">
 						<li class="nav-item">
 							<a class="btn">Connect to Bash Bunny</a>
+						</li>
+						<li class="nav-item" style="margin: auto; margin-right: 15px; margin-left: 20px;">
+							<a>©</a>
 						</li>
 					</ul>
 					<ul class="nav ms-auto">
@@ -141,9 +152,7 @@
 				<div style="margin: 20px; width: 100%" id="action">
 					<h3 class="text-center" style="color: #ced4da; margin-bottom: 10px;">Connecting your Bash Bunny...</h3>
 					<div class="text-center" style="margin-top: 100px; margin-bottom: 100px;">
-						<div class="spinner-grow" style="color: #1a62ec; width: 5rem; height: 5rem; --bs-spinner-animation-speed: 1.5s" role="status">
-							<span class="visually-hidden">Loading...</span>
-						</div>
+						<img src="static/bb_icon.png" style="height: 5rem; width: 5rem; animation-name: spinner; animation-duration: 1s; animation-delay: 1s; animation-iteration-count: infinite;">
 					</div>
 					<p>This can take some time. Make sure your Bash Bunny is nearby and the BlueBunny payload is running successfully (Green LED).</p>
 				</div>

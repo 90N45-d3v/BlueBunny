@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="SHORTCUT ICON" type="image/x-icon" href="static/icon.png"/>
-	<link rel="icon" type="image/x-icon" href="static/icon.png" />
+	<link rel="SHORTCUT ICON" type="image/x-icon" href="static/bb_icon.png"/>
+	<link rel="icon" type="image/x-icon" href="static/bb_icon.png" />
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>BlueBunny</title>
@@ -70,7 +70,6 @@
 		function info(topic) {
 			window.scrollTo(0, 0);
 
-			document.getElementsByTagName("BODY")[0].style["height"] = "100%";
 			document.getElementsByTagName("BODY")[0].style["overflow"] = "hidden";
 
 			document.getElementById("page").style["filter"] = "blur(2.5px)";
@@ -82,7 +81,6 @@
 		}
 
 		function infoClose(topic) {
-			document.getElementsByTagName("BODY")[0].style["height"] = null;
 			document.getElementsByTagName("BODY")[0].style["overflow"] = null;
 
 			document.getElementById("page").style["filter"] = null;
@@ -110,22 +108,25 @@
 		setInterval(connectionCheck, 10000);
 	</script>
 </head>
-<body style="background-color: #202124; color: #adb5bd;">
+<body style="background-color: #202124; color: #adb5bd; height: 100%">
 	<div id="page">
 		<div>
 			<nav class="navbar navbar-expand navbar-light fixed-top shadow-sm" style="border-bottom: solid; border-color: #1a62ec; border-width: 2px; background: #202124;">
 				<div class="container-fluid">
-					<a class="navbar-brand" href="#">
-						<img src="static/logo.png" style="height: 45px; padding-right: 15px; filter: brightness(0) saturate(100%) invert(23%) sepia(75%) saturate(3313%) hue-rotate(217deg) brightness(99%) contrast(86%);" class="d-inline-block">
+					<a class="navbar-brand">
+						<img src="static/logo.png" onclick="info('info_cp')" style="cursor: pointer; height: 45px; padding-right: 15px; padding-bottom: 5px; filter: brightness(0) saturate(100%) invert(23%) sepia(75%) saturate(3313%) hue-rotate(217deg) brightness(99%) contrast(86%);" class="d-inline-block">
 					</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<div class="collapse navbar-collapse" id="navbarToggler">
 						<ul class="nav ms-auto">
-						<li class="nav-item">
-							<a class="btn btn-imp" title="Connect" href="/connect" id="connectBtn" hidden>Connect to Bash Bunny</a>
-						</li>
+							<li class="nav-item">
+								<a class="btn btn-imp" title="Connect" href="/connect" id="connectBtn" hidden>Connect to Bash Bunny</a>
+							</li>
+							<li class="nav-item" style="margin: auto; margin-right: 15px; margin-left: 20px;">
+								<a style="cursor: pointer; font-size: 1.25rem;" title="Copyright & Attribution" onclick="info('info_cp')">©</a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -143,11 +144,9 @@
 							<li class="nav-item">
 								<a class="btn">Connect to Bash Bunny</a>
 							</li>
-						</ul>
-						<ul class="nav ms-auto">
-						<li class="nav-item">
-							<a class="nav-link">©</a>
-						</li>
+							<li class="nav-item" style="margin: auto; margin-right: 15px; margin-left: 20px;">
+								<a>©</a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -293,7 +292,7 @@
 					<p>This section allows you to change the Bash Bunny's attack mode like the <code>ATTACKMODE</code> payload command does.</p>
 					<p>Further and more complex attack mode combinations can always be set from the "Payload One-Liner" or a payload file.</p>
 					<p class="fw-bold">Important:</p>
-					<p>When setting the attack mode, you likely can't change it without a reboot (besides disabling it again). The victim machine may not recognize the change, for example, from STORAGE to HID. It may no longer detect the storage but won't be able to recognize the HID. Keep in mind: This can differ between victim devices.</p>
+					<p>When setting the attack mode, you likely can't change it without a reboot (besides disabling it again). The target machine may not recognize the change, for example, from STORAGE to HID. It may no longer detect the storage but won't be able to recognize the HID. Keep in mind: This can differ between target devices.</p>
 					<div class="text-center" style="margin-top: 100px;">
 						<button class="btn" onclick="infoClose('info_attackmode')">Close</button>
 					</div>
@@ -311,6 +310,24 @@
 					<p>Rebooting may help when you encouter execution issues. When the attacked device won't recognize attack mode changes, rebooting and then setting the new attack mode will fix it.</p>
 					<div class="text-center" style="margin-top: 100px;">
 						<button class="btn" onclick="infoClose('info_power')">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="position: absolute; width: 100%; height: 100%;" id="info_cp" hidden>
+		<div style="display: flex; justify-content: center; align-items: center; margin-top: 25px;">
+			<div class="rounded shadow" style="border: solid; border-color: #1a62ec; border-width: 1px; background: #202124; max-width: 600px; height: fit-content; margin-left: 15px; margin-right: 15px; display: flex; justify-content: center;">
+				<div style="margin: 20px; width: 100%" id="action">
+					<h3 class="text-center" style="color: #ced4da; margin-bottom: 10px;">Copyright & Attribution</h3>
+					<br>
+					<img src="static/logo.png" style="height: 45px; padding-right: 15px; padding-bottom: 5px;" class="d-inline-block">
+					<p>BlueBunny is an open source project from <code><a href="https://github.com/90N45-d3v">90N45</a></code>.<br>It is licensed under the MIT license and should be treated as such.</p>
+					<br>
+					<img src="static/bb_icon_original.png" style="height: 45px; padding-right: 15px; padding-bottom: 5px;" class="d-inline-block">
+					<p>Bash Bunny is a trademark of Hak5 LLC.<br>Visit <code><a href="https://hak5.org">hak5.org</a></code> for more.</p>
+					<div class="text-center" style="margin-top: 100px;">
+						<button class="btn" onclick="infoClose('info_cp')">Close</button>
 					</div>
 				</div>
 			</div>
