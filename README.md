@@ -20,7 +20,8 @@
 
 ## Overview
 #### Structure
-![BlueBunny-Info](https://github.com/90N45-d3v/BlueBunny/assets/79598596/b8958c7d-231c-4344-8ec8-d67c4018d095)
+![BlueBunny-Structure](https://github.com/90N45-d3v/BlueBunny/assets/79598596/48498db0-87cb-4a46-8c58-63495bade5f3)
+
 
 ## Installation & Start
 1. Install required dependencies
