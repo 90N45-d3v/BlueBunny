@@ -28,6 +28,10 @@
 ````
 pip install pygatt "pygatt[GATTTOOL]"
 ````
+Make sure [BlueZ](http://www.bluez.org/download/) is installed and `gatttool` is usable
+````
+sudo apt install bluez
+````
 2. Download BlueBunny's repository (and switch into the correct folder)
 ````
 git clone https://github.com/90N45-d3v/BlueBunny
