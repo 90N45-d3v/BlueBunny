@@ -1,4 +1,4 @@
-![banner](https://github.com/90N45-d3v/BlueBunny/assets/79598596/1b5c3e5c-589e-4e9e-b72e-809aa072855c)
+![BlueBunny-Banner](https://github.com/90N45-d3v/BlueBunny/assets/79598596/fae0b5ca-6b38-41b3-a5fc-7aa3cabea369)
 <p align="center">
  <img src="https://img.shields.io/badge/Made%20with-Python-blue">
  <img src="https://img.shields.io/github/license/90N45-d3v/BlueBunny.svg">
@@ -20,7 +20,7 @@
 
 ## Overview
 #### Structure
-![BlueBunny-Structure](https://github.com/90N45-d3v/BlueBunny/assets/79598596/48498db0-87cb-4a46-8c58-63495bade5f3)
+![BlueBunny-Structure](https://github.com/90N45-d3v/BlueBunny/assets/79598596/3004fb10-feef-45c8-8624-1393c2fb7288)
 
 
 ## Installation & Start
